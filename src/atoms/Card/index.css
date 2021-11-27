@@ -1,0 +1,62 @@
+.pokecards{
+    padding: 1rem;
+
+}
+
+.pokecards ul{
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template: 1fr / repeat(auto-fit, minmax(8rem, 1fr));
+    gap: .5rem;
+}
+
+.card{
+    width: 100%;
+    list-style: none;
+}
+
+.card button{
+    display: grid;
+    width: 100%;
+    align-items: center;
+    grid-template-rows: .2fr .6fr .2fr;
+    border: 4px solid;
+    background-color: var(--white);
+    padding: 0;
+    border-radius: .5rem;
+    font-size: 1rem;
+}
+
+.card span{
+    justify-self: end;
+    padding: .25rem .5rem;
+}
+
+.card figure{
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    background-color: var(--white);
+    margin: 0;
+}
+
+.card img{
+    /* width: 100%; */
+    height: 100%;
+}
+
+.card .name{
+    height: 100%;
+}
+
+.card .name span{
+    display: grid;
+    align-items: center;
+    font-weight: normal;
+    margin: 0;
+    height: 100%;
+    font-family: var(--text);
+    color: var(--white);
+    font-size: 1rem;
+}

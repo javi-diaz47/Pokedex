@@ -1,13 +1,59 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+  /* Pokemon Types */
+  --rock: #B69E31;
+  --ghost: #70559B;
+  --steel: #B7B9D0;
+  --water: #6493EB;
+  --grass: #74CB48;
+  --psychic: #FB5584;
+  --ice: #9AD6DF;
+  --dark: #75574C;
+  --fairy: #E69EAC;
+  --normal: #AAA67F;
+  --fighting: #C12239;
+  --flying: #A891EC;
+  --poison: #A43E9E;
+  --ground: #DEC16B;
+  --bug: #A7B723;
+  --fire: #F57D31;
+  --electric: #F9CF30;
+  --dragon: #7037FF;
+
+
+  /* Grayscale */
+  --bg: #F7F7F7;
+  --white: #ffffff;
+  --light-gray: #E0E0E0;
+  --medium-gray: #666666;
+  --dark-gray: #212121;
+
+  /* Fonts */
+  --font: 'Poppins', sans-serif;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: var(--font);
+}
+
+#root{
+  background-color: var(--bg);
+  width: 100%;
+  height: 100vh;
+  gap: .5rem;
+}
+
+button{
+  border: 0;
+  background-color: transparent;
+  transition: .2s;
+}
+
+button:hover{
+  transform: scale(1.2);
+}
+
+svg{
+    height: 100%;
 }

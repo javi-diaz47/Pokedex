@@ -1,0 +1,27 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:  1rem;
+    gap: 1rem;
+}
+
+.header-title{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header h2{
+    margin: 0;
+}
+
+.logo{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.sort svg{
+    height: 2.5rem;
+}
+
