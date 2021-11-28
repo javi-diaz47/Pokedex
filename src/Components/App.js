@@ -1,6 +1,6 @@
-import './App.css';
 import { MyProvider } from '../Context';
-import { AppUI } from './AppUI';
+import { Home } from './organisms/Home';
+import { Statistics } from './organisms/Statistics';
 
 function App() {
 
@@ -29,8 +29,10 @@ function App() {
   return (
 
     <MyProvider>
+      
+      <Home/>
 
-      <AppUI/>
+      <Statistics/>
 
     </MyProvider>
 

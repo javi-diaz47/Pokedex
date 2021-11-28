@@ -1,0 +1,50 @@
+.statistics{
+    position: fixed;
+    bottom: 100vh;
+    /* left: -100%; */
+    /* transform: translateX(-50%); */
+    border-radius: 50%;
+    color: var(--white);
+    /* transition: .3s; */
+}
+
+.statistics[stats="true"]{
+    border-radius: 0;
+    top: 0;
+    /* left: -50%; */
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: .5fr 1fr 1fr;
+    gap: 1rem;
+    /* filter: opacity(1); */
+    overflow: hidden;
+    animation: openStats .3s ease-out 1 forwards; 
+ 
+}
+
+@keyframes openStats {
+    from {
+        left: -100%;
+        /* transform: translateX(-50%); */
+    }
+    to {
+        left: 0;
+        /* transform: translateX(-50%); */
+    }
+}
+
+
+.statistics header figure {
+    width: 100%;
+    margin: 0;
+    display: grid;
+}
+
+.statistics header figure img {
+    width: 60%;
+    padding: .5rem;
+    justify-self: end;
+    filter: opacity(.4)
+}
+

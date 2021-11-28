@@ -1,0 +1,15 @@
+.charac{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+}
+
+.charac-name{
+    font-size: 0.75rem;
+    color: var(--medium-gray);
+    text-align: center;
+}
+
+.desc{
+    padding: 1rem;
+}

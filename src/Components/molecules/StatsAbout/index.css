@@ -1,0 +1,30 @@
+.stats-card .about{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "title title"
+                        "weight height"
+                         "desc desc";
+    gap: 1rem;
+}
+
+.about h2{
+    grid-area: title;
+    text-align: center;
+}
+
+.weight{
+    grid-area: weight;
+}
+
+.height{
+    grid-area: height;
+}
+
+.stats-card .desc{
+    grid-area: desc;
+    margin: 0 0 1rem;
+}
+
+

@@ -1,7 +1,9 @@
 import React from 'react';
 import {useState} from 'react';
 import {useContext} from 'react';
-import { MyContext } from '../../Context';
+import { MyContext } from '../../../Context';
+import { fetchPokemon } from '../../../Hooks/fetchPokemon';
+import { SearchIcon } from '../../atoms/searcheIcon';
 import './index.css';
 
 function SearchBar(){
@@ -10,6 +12,7 @@ function SearchBar(){
 
     const {
         searchPokemons,
+        setPokemons
     } = useContext(MyContext);
 
 
@@ -17,6 +20,15 @@ function SearchBar(){
         setSearchValue(ev.target.value);
         searchPokemons(ev.target.value);
     }
+
+    const onClick = async () => {
+
+        const pokemon = await fetchPokemon(searchValue);
+
+        setPokemons(pokemon);
+
+    }
+
 
     return (
         <section className="search-bar">
@@ -27,6 +39,11 @@ function SearchBar(){
                 placeholder="Search"
                 >
             </input>
+
+            <SearchIcon
+                onClick={onClick}
+            />
+
 
         </section>
     );

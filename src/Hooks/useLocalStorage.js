@@ -1,26 +1,34 @@
+import { fetchPokemon } from "./fetchPokemon";
+
 const { useState } = require("react");
-const { useEffect } = require("react/cjs/react.development");
+const { useEffect } = require("react");
 
-function useLocalStorage(item, initValue){
+function useLocalStorage(item){
 
-
-    const [items, setItems] = useState(initValue);
+    const [loading, setLoading] = useState(true);
+    const [items, setItems] = useState([]);
 
        try{
 
         useEffect(() => {
 
             let storageItem = JSON.parse(localStorage.getItem(item));
-            let parsedItem;
+            let parsedItem = [];
 
-            if(!storageItem){
-                localStorage.setItem(item, JSON.stringify(initValue));
-                parsedItem = initValue;
-            }else{
-                parsedItem = storageItem;
+            const getPokemon = async () => {
+                const pokemon = await fetchPokemon(24);
+                saveItems(pokemon);
+                setLoading(false);
             }
 
-            setItems(parsedItem);
+            if(!storageItem){
+                getPokemon();
+            }else{
+                parsedItem = storageItem;
+                setItems(parsedItem);
+                setLoading(false);
+            }
+
 
         }, []);
 
@@ -37,11 +45,12 @@ function useLocalStorage(item, initValue){
     }
 
 
-    return [
-            items, 
-            saveItems,
-        ];
+    return {
+        items, 
+        saveItems,
 
+        loading
+    }
 
 }
 

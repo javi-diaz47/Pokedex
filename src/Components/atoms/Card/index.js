@@ -1,33 +1,21 @@
 import React from 'react';
+import { useContext } from 'react';
+import { MyContext } from '../../../Context';
+import { getColorByType } from '../../Utils/colorByType';
+import { getPokemonType } from '../../Utils/getType';
 import './index.css';
 
 function Card({id, name, url, types}){
 
-    const typeColor = {
-        "rock": '#B69E31',
-        "ghost": '#70559B',
-        "steel": '#B7B9D0',
-        "water": '#6493EB',
-        "grass": '#74CB48',
-        "psychic": '#FB5584',
-        "ice": '#9AD6DF',
-        "dark": '#75574C',
-        "fairy": '#E69EAC',
-        "normal": '#AAA67F',
-        "fighting": '#C12239',
-        "flying": '#A891EC',
-        "poison": '#A43E9E',
-        "ground": '#DEC16B',
-        "bug": '#A7B723',
-        "fire": '#F57D31',
-        "electric": '#F9CF30',
-        "dragon": '#7037FF',
+    const {
+        onCard
+    } = useContext(MyContext);
+
+    const onClick = () => {
+        onCard(id);
     }
 
-    const color = typeColor[types[0].toLowerCase()];
-    
-
-    // console.log(color)
+    const color = getColorByType( getPokemonType(types[0]) );
 
     return (
     
@@ -36,6 +24,7 @@ function Card({id, name, url, types}){
             <button 
                 className={`card-btn`}
                 type={types}
+                onClick={onClick}
                 style={{"borderColor": color}}
             >
 
@@ -43,7 +32,9 @@ function Card({id, name, url, types}){
                     style={
                         {"color": color}
                     }
-                >#{id}</span>
+                >
+                    #{id}
+                </span>
 
                 <figure>
                     <img src={url} />

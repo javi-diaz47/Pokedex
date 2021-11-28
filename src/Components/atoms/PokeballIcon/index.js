@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react/cjs/react.development';
-import { MyContext } from '../../Context';
+import { MyContext } from '../../../Context';
 import { Icon } from '../Icon';
 
 function PokeballIcon(){
