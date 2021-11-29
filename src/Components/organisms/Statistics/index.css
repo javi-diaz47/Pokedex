@@ -16,9 +16,9 @@
     height: 100vh;
     display: grid;
     grid-template-rows: .5fr 1fr 1fr;
-    gap: 1rem;
+    gap: .5rem;
     /* filter: opacity(1); */
-    overflow: hidden;
+    overflow-y: scroll;
     animation: openStats .3s ease-out 1 forwards; 
  
 }
@@ -48,3 +48,32 @@
     filter: opacity(.4)
 }
 
+/* Header */
+.statistics header .wrapper{
+    position: fixed;
+    width: 100%;
+    display: grid;
+    grid-template-columns: .3fr 4fr 1fr;
+    padding-top: 1rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.statistics header h2 {
+    margin: 0;
+}
+
+.statistics .close-icon{
+    padding: 0 0 0 1rem;
+    display: grid;
+}
+
+.statistics header .wrapper h2{
+    text-transform: capitalize;
+}
+
+.statistics header span{
+    justify-self: end;
+    padding-right: 1rem;
+    font-weight: bold;
+}

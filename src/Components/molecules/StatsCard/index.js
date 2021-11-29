@@ -1,6 +1,7 @@
 import React from 'react';
-import { getColorByType } from '../../Utils/colorByType';
-import { getPokemonType } from '../../Utils/getType';
+import { getColorByType } from '../../utils/colorByType';
+import { getPokemonType } from '../../utils/getType';
+import { BaseStats } from '../BaseStats';
 import { StatsAbout } from '../StatsAbout';
 import './index.css';
 
@@ -8,6 +9,7 @@ function StatsCard({statistic}){
 
     return (
         <section className="stats-card">
+
             <img className="pokemon" src={statistic.sprites.front_default}/>
 
             <div className="types">
@@ -26,11 +28,13 @@ function StatsCard({statistic}){
                             </span>
                         )
                     })
-
                 }
             </div> 
+
             <StatsAbout statistic={statistic}/>
-            {/* <StatsAbout statistic={statistic}/> */}
+
+            <BaseStats statistic={statistic}/>
+
         </section>
     );
 

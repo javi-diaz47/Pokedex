@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import { useContext } from 'react';
 import { MyContext } from '../../../Context';
 import './index.css';
-import { getColorByType } from '../../Utils/colorByType';
+import { getColorByType } from '../../utils/colorByType';
 import  pokeball  from '../../../assets/pokeball-bg.svg';
 import { StatsCard } from '../../molecules/StatsCard';
-import { getPokemonType } from '../../Utils/getType';
+import { getPokemonType } from '../../utils/getType';
 import { Icon } from '../../atoms/Icon';
 
 function Statistics(){
@@ -34,10 +34,15 @@ function Statistics(){
                     }}
                     >
                     <header>
-                        <Icon
-                            type="close"
-                            onClick={onClose}
-                        />
+                        <div className="wrapper">
+                            <Icon
+                                className="close-icon"
+                                type="close"
+                                onClick={onClose}
+                            />
+                            <h2>{statistic.name}</h2>
+                            <span>{`#${statistic.id}`}</span>
+                        </div>
                         <figure>
                             <img className="pokeball-bg" src={pokeball} />
                         </figure>

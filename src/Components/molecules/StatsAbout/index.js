@@ -1,7 +1,7 @@
 import React from 'react';
 import { Characteristic } from '../../atoms/Characteristic';
-import { getColorByType } from '../../Utils/colorByType';
-import { getPokemonType } from '../../Utils/getType';
+import { getColorByType } from '../../utils/colorByType';
+import { getPokemonType } from '../../utils/getType';
 import './index.css';
 
 function StatsAbout({statistic}){
@@ -19,7 +19,7 @@ function StatsAbout({statistic}){
             <Characteristic
                 className="weight"
                 name="weight"
-                value={`${(statistic.weight/2.2).toFixed(1)} kg`}
+                value={`${(statistic.weight/10).toFixed(1)} kg`}
             />
 
 

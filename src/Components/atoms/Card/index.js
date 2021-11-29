@@ -1,8 +1,8 @@
 import React from 'react';
 import { useContext } from 'react';
 import { MyContext } from '../../../Context';
-import { getColorByType } from '../../Utils/colorByType';
-import { getPokemonType } from '../../Utils/getType';
+import { getColorByType } from '../../utils/colorByType';
+import { getPokemonType } from '../../utils/getType';
 import './index.css';
 
 function Card({id, name, url, types}){
