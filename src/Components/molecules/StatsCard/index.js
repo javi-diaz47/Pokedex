@@ -10,7 +10,12 @@ function StatsCard({statistic}){
     return (
         <section className="stats-card">
 
-            <img className="pokemon" src={statistic.sprites.front_default}/>
+            <img 
+                className="pokemon" 
+                // src={statistic.sprites.front_default}
+                src={`https://cdn.traction.one/pokedex/pokemon/${statistic.id}.png`}
+                alt={`${statistic.name} image`}
+            />
 
             <div className="types">
                 {   
@@ -18,7 +23,8 @@ function StatsCard({statistic}){
 
                         const pokemonType = getPokemonType(type);
                         return (
-                            <span 
+                            <span
+                                key={pokemonType} 
                                 className="types"
                                 style={{
                                     "backgroundColor": getColorByType(pokemonType)

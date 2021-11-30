@@ -1,6 +1,7 @@
 import React, { createContext } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { fetchPokemon } from "../Hooks/fetchPokemon";
 import { useLocalStorage } from '../Hooks/useLocalStorage';
 
 
@@ -8,11 +9,12 @@ const MyContext = createContext();
 
 function MyProvider(props){
 
-
     const {
         loading,
+        setLoading,
         items: pokemons,
-        saveItems: setPokemons
+        saveItems: setPokemons,
+        clearItems: clearPokemons,
     } = useLocalStorage('pokemons');
 
     const [searchedPokemons, setSearchedPokemons] = useState(pokemons);
@@ -26,10 +28,15 @@ function MyProvider(props){
     
     const searchPokemons = (value) => {
 
-        const found = pokemons.filter(p => 
+        let found = pokemons.filter(p => 
             p.name.toLowerCase()
-            .includes(value.toLowerCase())
+            .includes(value.toLowerCase()
+            )
         );
+
+        if(found.length === 0){
+            found = pokemons.filter(p => p.id == value);
+        }
         
         setSearchedPokemons(found);
  
@@ -61,8 +68,28 @@ function MyProvider(props){
 
     }
 
+    const nextPokemon = async (id) => {
+        
+        let found = pokemons.filter(p => p.id === id);
+        console.log(found)
+        
+        if(found.length == 0 && id > 0){
+            found[0] = await fetchPokemon(id);
+            setPokemons(found[0]);
+        }
+
+        setStatistic(...found);
+
+    }
+
+
     const onCloseCard = () => {
         setStatistic(undefined);
+    }
+
+    const clearPokedex = () => {
+        localStorage.setItem('pokemons', JSON.stringify([]));
+        clearPokemons();
     }
 
     
@@ -87,6 +114,9 @@ function MyProvider(props){
                     onCard,
                     onCloseCard,
                     statistic,
+
+                    nextPokemon,
+                    clearPokedex
 
                 }
             }

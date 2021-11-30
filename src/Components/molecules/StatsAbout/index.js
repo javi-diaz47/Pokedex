@@ -5,7 +5,7 @@ import { getPokemonType } from '../../utils/getType';
 import './index.css';
 
 function StatsAbout({statistic}){
-    console.log(statistic)
+    
     return (
         <div className="about">
             <h2

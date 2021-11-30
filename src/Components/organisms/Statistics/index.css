@@ -34,6 +34,9 @@
     }
 }
 
+.statistics header{
+    position: relative;
+}
 
 .statistics header figure {
     width: 100%;
@@ -76,4 +79,32 @@
     justify-self: end;
     padding-right: 1rem;
     font-weight: bold;
+}
+
+.next-pokemon{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* padding: 0 1rem; */
+    /* gap: 12rem; */
+}
+
+
+.next-pokemon button{
+    transform: scale(1.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.next-pokemon-icon svg{
+    transform: rotate(180deg);
+}
+
+.next-pokemon button svg{
+    padding: 0 0 0 1rem;
 }

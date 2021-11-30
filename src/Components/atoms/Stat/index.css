@@ -44,6 +44,7 @@
     height: .5rem;
     background-color: red;
     border-radius: 0.25rem;
+    transition: .3s;
 }
 
 .base-stats .title{

@@ -47,10 +47,10 @@ body {
 button{
   border: 0;
   background-color: transparent;
-  transition: .2s;
+  transition: .3s;
 }
 
-button:hover{
+button:active{
   transform: scale(1.2);
 }
 

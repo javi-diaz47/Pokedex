@@ -8,18 +8,28 @@ import  pokeball  from '../../../assets/pokeball-bg.svg';
 import { StatsCard } from '../../molecules/StatsCard';
 import { getPokemonType } from '../../utils/getType';
 import { Icon } from '../../atoms/Icon';
+import { Stat } from '../../atoms/Stat';
 
 function Statistics(){
 
     const {
         statistic,
-        onCloseCard
+        onCloseCard,
+        nextPokemon
     } = useContext(MyContext);
 
     const valid = statistic !== undefined ? true: false;
 
     const onClose = () => {
         onCloseCard();
+    }
+
+    const onNextPokemon = () => {
+        nextPokemon(statistic.id + 1);
+    }
+
+    const onBeforePokemon = () => {
+        nextPokemon(statistic.id - 1);
     }
 
     return ReactDOM.createPortal(
@@ -44,8 +54,25 @@ function Statistics(){
                             <span>{`#${statistic.id}`}</span>
                         </div>
                         <figure>
-                            <img className="pokeball-bg" src={pokeball} />
+                            <img 
+                                className="pokeball-bg" 
+                                src={pokeball} 
+                                alt="pokeball"
+                            />
                         </figure>
+                        <nav className="next-pokemon">
+                            <Icon
+                                className="before-pokemon-icon"
+                                type="next-pokemon-icon"
+                                onClick={onBeforePokemon}
+                            />
+
+                            <Icon
+                                className="next-pokemon-icon"
+                                type="next-pokemon-icon"
+                                onClick={onNextPokemon}
+                            />
+                        </nav>
                     </header>
 
                     <StatsCard statistic={statistic}/>

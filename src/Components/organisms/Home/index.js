@@ -12,10 +12,10 @@ function Home() {
     loading,
 
     searchedPokemons,
-    setPokemons
+    clearPokedex
   } = useContext(MyContext);
 
-  
+  console.log(searchedPokemons) 
   return (
 
     <div className="App">
@@ -27,7 +27,7 @@ function Home() {
 
       <PokeCards>
         {
-        !loading && 
+        !loading &&
         searchedPokemons.length !== 0 && 
         <section className="pokecards">
           <ul>
@@ -52,6 +52,12 @@ function Home() {
         </section>
         }
       </PokeCards>
+
+      <div className="clean-pokedex">
+        <button className="clean-pokedex-btn"
+          onClick={clearPokedex}
+        >Clear Pokedex</button>
+      </div>
 
     </div>
   );

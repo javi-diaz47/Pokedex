@@ -16,12 +16,16 @@ function useLocalStorage(item){
             let parsedItem = [];
 
             const getPokemon = async () => {
-                const pokemon = await fetchPokemon(24);
+                const pokemon = await fetchPokemon(1);
                 saveItems(pokemon);
                 setLoading(false);
             }
 
-            if(!storageItem){
+            if(storageItem === null){
+                localStorage.setItem('pokemons', JSON.stringify([]));
+            }
+
+            if(storageItem.length == 0){
                 getPokemon();
             }else{
                 parsedItem = storageItem;
@@ -44,30 +48,22 @@ function useLocalStorage(item){
         setItems(newItems);
     }
 
+    const clearItems = () => {
+        const newItems = [];
+        localStorage.setItem(item, JSON.stringify(newItems));
+        setItems(newItems);
+    }
+
 
     return {
         items, 
         saveItems,
-
-        loading
+        clearItems,
+        
+        loading,
+        setLoading,
     }
 
 }
 
 export { useLocalStorage };
-
- // const url = 'https://pokeapi.glitch.me/v1/pokemon';
-
-    // const getPokemons = async (id=25) => {
-
-    //     let header = {
-    //         "User-Agent": "pokedex (http://localhost:3000/, v0.0.1)" 
-    //     }
-
-    //     const response = await fetch(`${url}/${id}`,{
-    //         headers: header
-    //     });
-    //     const pokemon = await response.json();
-    //     return pokemon;
-    // }
-

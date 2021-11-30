@@ -11,6 +11,7 @@ function SearchBar(){
     const [searchValue, setSearchValue] = useState('');
 
     const {
+        pokemons,
         searchPokemons,
         setPokemons
     } = useContext(MyContext);
@@ -23,9 +24,20 @@ function SearchBar(){
 
     const onClick = async () => {
 
-        const pokemon = await fetchPokemon(searchValue);
+        const lowerSearchValue = searchValue.toLowerCase();
+        
+        const isAlreadyInStorage = pokemons.filter(p => 
+            p.name == lowerSearchValue || 
+            p.id == searchValue);
 
-        setPokemons(pokemon);
+        if(isAlreadyInStorage.length === 0){
+            const pokemon = await fetchPokemon(lowerSearchValue);
+            setPokemons(pokemon);
+            console.log('Fetching');
+        }else{
+            console.log('Not fetching')
+        }
+
 
     }
 

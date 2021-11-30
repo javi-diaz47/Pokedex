@@ -19,10 +19,12 @@ function BaseStats({statistic}){
 
                 statistic.stats.map(stat => (
                     
-                    <Stat name={stat.stat.name}
-                            value={stat.base_stat}
-                            color={color}
-                            />
+                    <Stat 
+                        key={stat.stat.name}
+                        name={stat.stat.name}
+                        value={stat.base_stat}
+                        color={color}
+                    />
                 
                 ))
 

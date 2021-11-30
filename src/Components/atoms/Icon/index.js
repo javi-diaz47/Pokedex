@@ -6,6 +6,7 @@ import {ReactComponent as PokeballIcon} from '../../../assets/pokeball.svg';
 import {ReactComponent as WeightIcon} from '../../../assets/weight.svg';
 import {ReactComponent as HeightIcon} from '../../../assets/height.svg';
 import {ReactComponent as CloseIcon} from '../../../assets/arrow-left.svg';
+import {ReactComponent as NextPokemonIcon} from '../../../assets/next-pokemon.svg';
 
 
 function Icon({type, className, onClick}){
@@ -31,9 +32,12 @@ function Icon({type, className, onClick}){
         ),
         "close": (
             <CloseIcon/>
-        )
-    }
+        ),
+        "next-pokemon-icon": (
+            <NextPokemonIcon/>
+        ),
 
+    }
     
 
     return (

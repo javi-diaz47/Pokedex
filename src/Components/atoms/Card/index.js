@@ -37,7 +37,10 @@ function Card({id, name, url, types}){
                 </span>
 
                 <figure>
-                    <img src={url} />
+                    <img 
+                        src={`https://cdn.traction.one/pokedex/pokemon/${id}.png`}
+                        alt={`${name} image`}
+                    />
                 </figure>
                 
                 <div 
