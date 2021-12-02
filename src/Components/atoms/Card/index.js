@@ -5,7 +5,7 @@ import { getColorByType } from '../../utils/colorByType';
 import { getPokemonType } from '../../utils/getType';
 import './index.css';
 
-function Card({id, name, url, types}){
+function Card({id, name, types}){
 
     const {
         onCard

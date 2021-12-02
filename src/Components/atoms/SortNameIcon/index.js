@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from '../Icon';
 import { MyContext } from '../../../Context';
-import { useContext } from 'react/cjs/react.development';
+import { useContext } from 'react';
 
 function SortNameIcon(){
 

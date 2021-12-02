@@ -8,7 +8,6 @@ import  pokeball  from '../../../assets/pokeball-bg.svg';
 import { StatsCard } from '../../molecules/StatsCard';
 import { getPokemonType } from '../../utils/getType';
 import { Icon } from '../../atoms/Icon';
-import { Stat } from '../../atoms/Stat';
 
 function Statistics(){
 

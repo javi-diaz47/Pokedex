@@ -11,7 +11,6 @@ function MyProvider(props){
 
     const {
         loading,
-        setLoading,
         items: pokemons,
         saveItems: setPokemons,
         clearItems: clearPokemons,
@@ -71,7 +70,6 @@ function MyProvider(props){
     const nextPokemon = async (id) => {
         
         let found = pokemons.filter(p => p.id === id);
-        console.log(found)
         
         if(found.length == 0 && id > 0){
             found[0] = await fetchPokemon(id);

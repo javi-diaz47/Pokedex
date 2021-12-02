@@ -1,7 +1,7 @@
 import { fetchPokemon } from "./fetchPokemon";
+import {useState} from 'react';
+import {useEffect} from 'react';
 
-const { useState } = require("react");
-const { useEffect } = require("react");
 
 function useLocalStorage(item){
 

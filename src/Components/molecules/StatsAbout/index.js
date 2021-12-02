@@ -28,10 +28,9 @@ function StatsAbout({statistic}){
                 name="height"
                 value={`${(statistic.height/10).toFixed(1)} m`}
             />
-            <p className="desc">
+            {/* <p className="desc">
                 Debes escribir una descripcion javi
-                {/* { console.log(statistic) } */}
-            </p>
+            </p> */}
         </div>
 
     );

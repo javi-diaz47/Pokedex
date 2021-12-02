@@ -15,7 +15,6 @@ function Home() {
     clearPokedex
   } = useContext(MyContext);
 
-  console.log(searchedPokemons) 
   return (
 
     <div className="App">
@@ -26,31 +25,32 @@ function Home() {
 
 
       <PokeCards>
-        {
-        !loading &&
-        searchedPokemons.length !== 0 && 
         <section className="pokecards">
-          <ul>
-            {
-              searchedPokemons.map(({
-                id,
-                name,
-                types,
-                sprites
-              }) => (
-                <Card
-                  key={id}
-                  id={id}
-                  name={name}
-                  types={types}
-                  url={sprites.front_default}
-                />
+        {
+          !loading &&
+          searchedPokemons.length !== 0 && 
+            <ul>
+              {
+                searchedPokemons.map(({
+                  id,
+                  name,
+                  types,
+                  sprites
+                }) => (
+                  <Card
+                    key={id}
+                    id={id}
+                    name={name}
+                    types={types}
+                    url={sprites.front_default}
+                  />
 
-              ))
-            }
-          </ul>
-        </section>
+                ))
+              }
+            </ul>
         }
+
+        </section>
       </PokeCards>
 
       <div className="clean-pokedex">

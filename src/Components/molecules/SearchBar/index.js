@@ -33,12 +33,8 @@ function SearchBar(){
         if(isAlreadyInStorage.length === 0){
             const pokemon = await fetchPokemon(lowerSearchValue);
             setPokemons(pokemon);
-            console.log('Fetching');
-        }else{
-            console.log('Not fetching')
         }
-
-
+        
     }
 
 
