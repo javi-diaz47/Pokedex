@@ -1,21 +1,12 @@
 import React from 'react';
 import {useState} from 'react';
-import {useContext} from 'react';
-import { MyContext } from '../../../Context';
 import { fetchPokemon } from '../../../Hooks/fetchPokemon';
 import { SearchIcon } from '../../atoms/searcheIcon';
 import './index.css';
 
-function SearchBar(){
+function SearchBar({loading, pokemons, searchPokemons, setPokemons}){
 
     const [searchValue, setSearchValue] = useState('');
-
-    const {
-        pokemons,
-        searchPokemons,
-        setPokemons
-    } = useContext(MyContext);
-
 
     const onChange = (ev) => {
         setSearchValue(ev.target.value);
@@ -45,7 +36,7 @@ function SearchBar(){
                 value={searchValue} 
                 onChange={onChange}
                 placeholder="Search"
-                >
+            >
             </input>
 
             <SearchIcon

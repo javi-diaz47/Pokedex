@@ -14,7 +14,9 @@ function BaseStats({statistic}){
             <h2
                 className="title"
                 style={{"color": color}} 
-            >Base Stats</h2>
+            >
+                Base Stats
+            </h2>
             {
 
                 statistic.stats.map(stat => (

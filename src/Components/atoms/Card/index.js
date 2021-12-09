@@ -1,15 +1,10 @@
 import React from 'react';
-import { useContext } from 'react';
-import { MyContext } from '../../../Context';
 import { getColorByType } from '../../utils/colorByType';
 import { getPokemonType } from '../../utils/getType';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import './index.css';
 
-function Card({id, name, types}){
-
-    const {
-        onCard
-    } = useContext(MyContext);
+function Card({id, name, types, onCard}){
 
     const onClick = () => {
         onCard(id);
@@ -37,9 +32,9 @@ function Card({id, name, types}){
                 </span>
 
                 <figure>
-                    <img 
+                    <LazyLoadImage 
                         src={`https://cdn.traction.one/pokedex/pokemon/${id}.png`}
-                        alt={`${name} image`}
+                        alt={`${name}`}
                     />
                 </figure>
                 

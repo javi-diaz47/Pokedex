@@ -1,13 +1,10 @@
-import React, { createContext } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { fetchPokemon } from "../Hooks/fetchPokemon";
-import { useLocalStorage } from '../Hooks/useLocalStorage';
+import { fetchPokemon } from "./fetchPokemon";
+import { useLocalStorage } from './useLocalStorage';
 
 
-const MyContext = createContext();
-
-function MyProvider(props){
+function usePokemons(){
 
     const {
         loading,
@@ -92,44 +89,31 @@ function MyProvider(props){
 
     
 
-    return (
+    return {
+        loading,
 
-        <MyContext.Provider
-            value={
-                {
-                    loading,
+        pokemons,
+        setPokemons,
 
-                    pokemons,
-                    setPokemons,
+        searchPokemons,
+        searchedPokemons,
+        setSearchedPokemons,
 
-                    searchPokemons,
-                    searchedPokemons,
-                    setSearchedPokemons,
+        sortByName,
+        sortById,
 
-                    sortByName,
-                    sortById,
+        onCard,
+        onCloseCard,
+        statistic,
 
-                    onCard,
-                    onCloseCard,
-                    statistic,
+        nextPokemon,
+        clearPokedex
 
-                    nextPokemon,
-                    clearPokedex
-
-                }
-            }
-        
-        >
-            {props.children}
-        </MyContext.Provider>
-
-    );
-
-
+    }
 }
 
 
-export { MyContext, MyProvider };
+export { usePokemons };
 
 
 

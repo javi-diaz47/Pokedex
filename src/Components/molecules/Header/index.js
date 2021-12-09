@@ -1,9 +1,9 @@
 import React from 'react';
 import { PokeballIcon } from '../../atoms/PokeballIcon';
-import { SortNameIcon } from '../../atoms/SortNameIcon';
+import { SortIcon } from '../../atoms/SortIcon';
 import './index.css';
 
-function Header(){
+function Header({sortByName}){
 
     
     return(
@@ -12,7 +12,7 @@ function Header(){
                 <PokeballIcon/>
                 <h2>Pokédex</h2>
             </div>
-            <SortNameIcon/>
+            <SortIcon sort={sortByName}/>
         </header>
     );
 

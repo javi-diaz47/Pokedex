@@ -1,10 +1,25 @@
 import React from 'react';
-import Card from '../../atoms/Card';
 
-function PokeCards(props){
+function PokeCards({loading, searchedPokemons, render, children}){
+
+    const renderFunc = children || render; 
 
     return (
-        props.children
+        <section className="pokecards">
+
+            {
+                !loading && 
+                searchedPokemons !== undefined &&
+
+                <ul>
+
+                    {searchedPokemons.map(renderFunc)}
+
+                </ul>
+            }
+        
+        </section>    
+    
     );
 
 }
