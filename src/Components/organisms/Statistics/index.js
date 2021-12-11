@@ -1,12 +1,11 @@
 import React from 'react';
-import { useState } from 'react';
 import ReactDOM from 'react-dom';
+import { useEffect } from 'react';
 import { getColorByType } from '../../utils/colorByType';
 import { StatsCard } from '../../molecules/StatsCard';
 import { getPokemonType } from '../../utils/getType';
 import { StatsHeader } from '../../molecules/StatsHeader';
 import './index.css';
-import { useEffect } from 'react/cjs/react.development';
 
 function Statistics({statistic, stat, onCloseCard, nextPokemon}){
     
