@@ -1,14 +1,14 @@
 import React from 'react';
 import { Icon } from '../Icon';
 
-function SortIcon({sort}){
+function SortIcon({sort, type}){
 
     return (
 
         <Icon 
             onClick={sort}
             className="sort" 
-            type="sortName"
+            type={type}
         />
 
     );

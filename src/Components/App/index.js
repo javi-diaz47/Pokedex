@@ -18,6 +18,8 @@ function App() {
     setPokemons,
     onCard,
     sortByName,
+    sortById,
+    stat,
     statistic,
     onCloseCard,
     nextPokemon,
@@ -30,6 +32,7 @@ function App() {
 
         <Header 
           sortByName={sortByName}
+          sortById={sortById}
         />
 
         <SearchBar
@@ -62,13 +65,16 @@ function App() {
         <div className="clean-pokedex">
           <button className="clean-pokedex-btn"
             onClick={clearPokedex}
-          >Clear Pokedex</button>
+          >
+            Clear Pokedex
+          </button>
         </div>
         
         
         {
           !!statistic &&
           <Statistics
+            stat={stat}
             statistic={statistic}
             onCloseCard={onCloseCard}
             nextPokemon={nextPokemon}

@@ -12,10 +12,10 @@ import {ReactComponent as NextPokemonIcon} from '../../../assets/next-pokemon.sv
 function Icon({type, className, onClick}){
 
     const iconTypes = {
-        "sortNumber": (
+        "sortById": (
             <SortNumberIcon/>
         ),
-        "sortName": (
+        "sortByName": (
             <SortNameIcon/>
         ),
         "pokeball": (

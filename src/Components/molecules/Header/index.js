@@ -3,16 +3,20 @@ import { PokeballIcon } from '../../atoms/PokeballIcon';
 import { SortIcon } from '../../atoms/SortIcon';
 import './index.css';
 
-function Header({sortByName}){
+function Header({sortByName, sortById}){
 
     
     return(
         <header className="header">
             <div className="header-title">
-                <PokeballIcon/>
+                <PokeballIcon sort={sortById}/>
                 <h2>Pokédex</h2>
             </div>
-            <SortIcon sort={sortByName}/>
+            <div>
+                <SortIcon sort={sortByName} type="sortByName"/>
+                <SortIcon sort={sortById} type="sortById"/>
+
+            </div>
         </header>
     );
 

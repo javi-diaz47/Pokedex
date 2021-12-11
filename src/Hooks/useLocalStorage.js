@@ -43,7 +43,7 @@ function useLocalStorage(item){
 
     const saveItems = (newItem) => {
         const newItems = [...items];
-        newItems.push(newItem);
+        newItems.unshift(newItem);
         localStorage.setItem(item, JSON.stringify(newItems));
         setItems(newItems);
     }

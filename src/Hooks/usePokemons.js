@@ -16,6 +16,7 @@ function usePokemons(){
     const [searchedPokemons, setSearchedPokemons] = useState(pokemons);
 
     const [statistic, setStatistic] = useState(pokemons[0]);
+    const [stat, setStat] = useState(false);
     
     useEffect(() => {
         setSearchedPokemons(pokemons);
@@ -47,8 +48,10 @@ function usePokemons(){
         setSearchedPokemons(found);
     }
 
+    
     const sortById = () => {
-        const found = pokemons.sort((a, b) => 
+        const found = [...pokemons];
+        found.sort((a, b) => 
                         a.id > b.id ? 1 : -1
                         );
         
@@ -58,9 +61,9 @@ function usePokemons(){
 
     const onCard = (id) => {
         const found = pokemons.filter(p => p.id === id);
-
-
+        
         setStatistic(...found);
+        setStat(true);
 
     }
 
@@ -79,7 +82,7 @@ function usePokemons(){
 
 
     const onCloseCard = () => {
-        setStatistic(undefined);
+        setStat(false);
     }
 
     const clearPokedex = () => {
@@ -104,6 +107,7 @@ function usePokemons(){
 
         onCard,
         onCloseCard,
+        stat,
         statistic,
 
         nextPokemon,
